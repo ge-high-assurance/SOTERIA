@@ -34,6 +34,6 @@ all the data from the project and check out the appropriate commit listed in the
 $ git submodule init
 Submodule 'safety-analysis' (https://github.com/ge-high-assurance/safety-analysis.git) registered for path 'safety-analysis'
 $ git submodule update
-Cloning into '/Users/200005944/GitHub/testclone/SOTERIA/safety-analysis'...
+Cloning into '/SOTERIA/safety-analysis'...
 Submodule path 'safety-analysis': checked out 'dcbe278b26c047a6dce039f748384ee6189fc8db'
 ```
