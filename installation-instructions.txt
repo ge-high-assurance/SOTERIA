@@ -1,0 +1,70 @@
+Copyright © 2019 United States Government as represented by the Administrator of the 
+National Aeronautics and Space Administration.  All Rights Reserved.
+
+1) Install Ocaml (tested with Version 4.07.1) and OPAM (tested with Version 2.0.0)
+   Suggestion: use a package manager like MacPorts or Homebrew 
+
+   For the Mac, here are more detailed instructions:
+
+   A) Install MacPorts (tested with Version 2.5.3) or install homebrew
+   To install MacPorts, go to https://www.macports.org.
+
+   To install Homebrew, go to https://brew.sh
+
+   Homebrew will want to install Xcode. Xcode can be installed from the AppStore.
+
+   B) Install OPAM
+
+   If using MacPorts to install OPAM (allow the installation of any dependencies):
+
+   $ sudo port install opam 
+
+   If using homebrew to install OPAM
+
+   $ brew install opam 
+
+   C) Initialize OPAM (we suggest answering "y" to the questions asked; see https://opam.ocaml.org/doc/Usage.html)
+   and use the right version of Ocaml (package dependencies require version 4.02.3)
+   
+   $ opam init --comp 4.07.0
+
+   D) Do as the previous command suggests. In particular, initialize your environment variables
+
+   $ eval `opam config env`
+
+   But also update ~/.profile and ~/.ocamlinit as per the previous command output. 
+
+2) Install the following libraries (and allow all dependencies to be installed)
+
+   $ opam install async core core_extended ocamlfind 
+
+3) Install an editor. We suggest the use of emacs with tuareg mode for syntax highlighting.
+   With MacPorts, use the following command:
+
+   $ port install emacs-mac-app tuareg 
+
+   You can also install textwrangler, from the AppStore.
+   To get OCaml syntax highlighting, copy the file OCaml.plist (from the web) into 
+   ~/Library/Application Support/Language Modules.
+
+7) Install graphviz. With MacPorts, use the following command: (tested with Version 2.40.1_1+pangocairo+x11)
+
+   $ port install graphviz
+
+8) Build the tool. Source files are located in 2 directories: safety-analysis/tool and
+   architecture-synthesis/tool. Use -Is to specify the paths in a comma separated list.
+
+   $ corebuild -Is safety-analysis/tool,architecture-synthesis/tool soteria.byte 
+
+   Note that you can clean a build with the following command. (If you do, you have
+   to rebuild the tool with the command above.)
+
+   $ corebuild -clean
+
+9) To run the examples
+
+   Go to the examples/ directory. Execute the following command.
+	
+   $ ocaml <navigation_position.ml 
+
+   Instead of navigation_position.ml, you can create your own example file.
