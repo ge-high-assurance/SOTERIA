@@ -1,0 +1,3 @@
+[submodule "safety-analysis"]
+	path = safety-analysis
+	url = https://github.com/ge-high-assurance/safety-analysis.git
